@@ -1,76 +1,97 @@
-# 🏡 House Price Prediction – Advanced Regression & Ensemble Learning
+# 🏡 House Price Prediction — Advanced Regression & Ensemble Learning
 
-An end-to-end Machine Learning project that predicts residential house prices using advanced regression algorithms, feature engineering, hyperparameter optimization, and ensemble learning.
+An end-to-end Machine Learning project for predicting residential house prices using advanced regression algorithms, feature engineering, hyperparameter optimization, and ensemble learning.
 
-This project is based on the **House Prices – Advanced Regression Techniques** competition hosted on Kaggle.
+Built for the **House Prices – Advanced Regression Techniques** competition on Kaggle.
+
+<p align="center">
+  <img src="visualizations/kaggle_submission_scores.png" width="85%" alt="Kaggle submission performance comparison">
+</p>
+
+## 🏆 Best Kaggle Performance
+
+| Metric | Result |
+|---|---|
+| Best Kaggle RMSE | **0.12427** |
+| Best Version | V2 |
+| Best Approach | Weighted Blending |
+| Competition | House Prices - Advanced Regression Techniques |
+| Platform | Kaggle |
+
+Lower RMSE indicates better performance.
 
 ## 📌 Project Overview
 
 The objective is to predict the final sale prices of residential houses in Ames, Iowa, using 79 explanatory variables describing different aspects of residential properties.
 
-The project explores multiple regression algorithms and ensemble techniques to improve prediction performance.
+The project was developed through three iterations:
 
-**Best Kaggle Score: 0.12427 RMSE**
+- **V1:** Baseline regression models and model comparison.
+- **V2:** Advanced boosting algorithms, hyperparameter optimization, and weighted blending.
+- **V3:** Advanced feature engineering, outlier analysis, weighted blending, and stacking.
 
-## 🎯 Objectives
+## 🎯 Project Objectives
 
 - Perform Exploratory Data Analysis (EDA).
 - Handle missing values and categorical variables.
-- Apply feature engineering.
+- Develop meaningful features from existing housing attributes.
 - Implement multiple regression algorithms.
 - Compare model performance using cross-validation.
 - Optimize hyperparameters using Optuna.
-- Explore weighted blending and stacking.
-- Generate predictions for Kaggle submission.
+- Experiment with weighted blending and stacking.
+- Generate predictions for Kaggle submissions.
 
 ## 🛠️ Technologies Used
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- XGBoost
-- LightGBM
-- CatBoost
-- Optuna
-- Jupyter Notebook
+| Category | Technologies |
+|---|---|
+| Programming | Python |
+| Data Processing | Pandas, NumPy |
+| Visualization | Matplotlib, Seaborn |
+| Machine Learning | Scikit-learn |
+| Boosting | XGBoost, LightGBM, CatBoost |
+| Optimization | Optuna |
+| Development | Jupyter Notebook, VS Code |
+| Version Control | Git, GitHub |
 
-## 🤖 Machine Learning Algorithms
+## 🤖 Machine Learning Models
 
-### Traditional Regression Models
+### Traditional Regression
 - Ridge Regression
 - Lasso Regression
 - ElasticNet
-- Random Forest Regressor
-- Extra Trees Regressor
-- Gradient Boosting Regressor
+- Random Forest
+- Extra Trees
+- Gradient Boosting
 
-### Advanced Boosting Algorithms
+### Advanced Boosting
 - XGBoost
 - LightGBM
 - CatBoost
 
-### Ensemble Techniques
+### Ensemble Learning
 - Weighted Blending
 - Stacking Regressor
 
-## 📊 Kaggle Performance
+## 📊 Kaggle Submission Results
 
-The project was developed incrementally through three versions.
+The project was developed and evaluated through multiple submissions.
 
 | Version | Model | Kaggle RMSE |
 |---|---|---:|
-| V1 | Gradient Boosting | 0.13026 |
+| V1 | Initial Submission | 0.13026 |
+| V2 | Best Single Model | 0.12600 |
 | V2 | Weighted Blending | **0.12427** |
-| V2 | CatBoost | 0.12600 |
 | V3 | Weighted Blending | 0.12444 |
 | V3 | Stacking | 0.12610 |
 
-**Best Result: 0.12427 RMSE (V2 Weighted Blending)**
+**Best Result: 0.12427 RMSE — V2 Weighted Blending.**
 
-Lower RMSE indicates better prediction performance.
+### Performance Visualization
+
+<p align="center">
+  <img src="visualizations/kaggle_submission_scores.png" width="90%" alt="Kaggle leaderboard score comparison">
+</p>
 
 ## 🔍 Feature Engineering
 
@@ -87,35 +108,41 @@ Examples include:
 - Basement Availability
 - Pool Availability
 - Quality × Living Area
+- Quality × Total Square Footage
 
-## ⚙️ Hyperparameter Optimization
+### Feature Importance
 
-Optuna was incorporated to explore better Gradient Boosting hyperparameters.
+<p align="center">
+  <img src="visualizations/feature_importance_v3.png" width="85%" alt="V3 feature importance">
+</p>
 
-The optimization process searches for suitable combinations of:
+The importance scores represent model-derived feature importance, not causal effects.
 
-- Number of estimators
-- Learning rate
-- Maximum depth
-- Minimum samples per leaf
-- Subsample ratio
+## 📚 Project Documentation
+
+Detailed documentation is available in the `docs/` directory.
+
+| Document | Description |
+|---|---|
+| [Project Report](docs/PROJECT_REPORT.md) | Complete project report and implementation overview |
+| [Methodology](docs/METHODOLOGY.md) | Machine learning workflow, preprocessing, and algorithms |
+| [Results & Analysis](docs/RESULTS_AND_ANALYSIS.md) | Model comparisons and Kaggle performance |
+| [Future Scope](docs/FUTURE_SCOPE.md) | Potential improvements and future development |
 
 ## 📁 Project Structure
 
 ```text
 house-price-prediction-ml/
 │
-├── data/
+├── data/                         # Local Kaggle datasets (not tracked)
 │
 ├── notebooks/
 │   └── house_prices_walkthrough.ipynb
 │
 ├── src/
-│   ├── train.py
-│   ├── train_v2.py
-│   └── train_v3.py
-│
-├── outputs/
+│   ├── train.py                  # V1 implementation
+│   ├── train_v2.py               # V2 implementation
+│   └── train_v3.py               # V3 implementation
 │
 ├── results/
 │   ├── best_submission_v2_blend.csv
@@ -125,7 +152,17 @@ house-price-prediction-ml/
 │   ├── model_comparison_v3.csv
 │   └── outlier_review_v3.csv
 │
+├── visualizations/
+│   ├── kaggle_submission_scores.png
+│   └── feature_importance_v3.png
+│
 ├── docs/
+│   ├── PROJECT_REPORT.md
+│   ├── METHODOLOGY.md
+│   ├── RESULTS_AND_ANALYSIS.md
+│   └── FUTURE_SCOPE.md
+│
+├── outputs/                      # Generated model outputs
 │
 ├── .gitignore
 ├── README.md
@@ -133,7 +170,7 @@ house-price-prediction-ml/
 └── requirements_v2.txt
 ```
 
-## 🚀 Installation and Execution
+## ⚙️ Installation and Setup
 
 ### 1. Clone the Repository
 
@@ -153,83 +190,95 @@ cd house-price-prediction-ml
 python -m venv .venv
 ```
 
-Activate it on Windows:
+Activate on Windows:
 
-```bash
+```powershell
 .venv\Scripts\activate
 ```
 
 ### 4. Install Dependencies
 
-For the baseline project:
+Install baseline requirements:
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
-For advanced models:
+Install advanced model requirements:
 
 ```bash
-pip install -r requirements_v2.txt
+python -m pip install -r requirements_v2.txt
 ```
 
 ### 5. Download the Dataset
 
-Download the following files from the Kaggle competition:
+Download the following files from Kaggle:
 
-- train.csv
-- test.csv
+- `train.csv`
+- `test.csv`
 
-Place both files inside the `data/` directory.
+Place both files inside the local `data/` folder.
 
-Dataset: https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data
+Dataset:
+
+https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data
 
 ### 6. Run the Models
 
-Baseline:
+Baseline implementation:
 
 ```bash
 python src/train.py
 ```
 
-Advanced models:
+Advanced implementation:
 
 ```bash
 python src/train_v2.py
 ```
 
-Advanced feature engineering and ensemble learning:
+Advanced feature engineering and ensemble implementation:
 
 ```bash
 python src/train_v3.py
 ```
 
+Optional Optuna tuning for V2:
+
+```bash
+python src/train_v2.py --tune --trials 20
+```
+
+Check the individual scripts for their exact arguments and generated output locations.
+
 ## 📈 Evaluation Metric
 
-The competition evaluates predictions using Root Mean Squared Error (RMSE) on logarithmic house prices.
+The competition uses Root Mean Squared Error (RMSE) between the logarithms of predicted and actual house prices.
 
 A lower score indicates better prediction performance.
 
-## 🏆 Key Learnings
+## 💡 Key Learnings
 
 - Practical implementation of regression algorithms.
-- Handling missing values and categorical features.
-- Importance of feature engineering.
-- Understanding ensemble learning.
+- Feature engineering for structured datasets.
+- Handling missing data and categorical variables.
+- Cross-validation and model evaluation.
 - Hyperparameter optimization using Optuna.
-- Model validation using cross-validation.
-- Comparing validation performance with Kaggle leaderboard results.
+- Ensemble learning through blending and stacking.
+- Understanding overfitting and generalization.
+- Preparing and submitting Kaggle prediction files.
 
-## 🔗 Kaggle Competition
+## 🔗 Project Links
 
-https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques
+- **GitHub Repository:** https://github.com/Prince08012007/house-price-prediction-ml
+- **Kaggle Competition:** https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques
 
 ## 👨‍💻 Author
 
 **Prince**
 
-Machine Learning | Data Science | Python
+Machine Learning | Artificial Intelligence | Python | Data Science
 
 ---
 
-⭐ If you find this project interesting, consider giving the repository a star!
+⭐ If you find this project useful or interesting, consider giving the repository a star!
