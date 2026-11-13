@@ -1,0 +1,4 @@
+Model,Weight
+CatBoost,0.6187631699850463
+XGBoost,0.38123683001495373
+GradientBoosting,0.0
