@@ -1,0 +1,6 @@
+# Additions for house-price-prediction-ml
+
+Copy the three Markdown files from `docs/` into your repository's existing `docs/` folder.
+Copy the PNG files from `visualizations/` into a new `visualizations/` folder at the repository root.
+
+The charts use the Kaggle scores and V3 feature-importance snapshot already recorded in the project's report/README. They are presentation assets, not fresh model runs.
